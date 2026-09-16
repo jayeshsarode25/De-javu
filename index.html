@@ -1,0 +1,1553 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Yashacha Mahakumbh - Knowledge, Networking & Growth Event in Nashik on 27 September 2026. ₹1,499. Lunch Included."
+    />
+    <title>Yashacha Mahakumbh - Knowledge, Networking & Growth</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+Devanagari:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --primary-red: #ef5350;
+        --dark-red: #d32f2f;
+        --primary-green: #66bb6a;
+        --dark-green: #43a047;
+        --bg-dark: #ffffff;
+        --bg-darker: #ffffff;
+        --text-white: #000000;
+        --text-light: #000000;
+        --border-dark: #333333;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family:
+          "Inter",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+        background-color: var(--bg-dark);
+        color: var(--text-white);
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+      h1 {
+        font-size: clamp(2.5rem, 6vw, 4.5rem);
+        font-weight: 800;
+        line-height: 1.1;
+        margin-bottom: 1.5rem;
+        font-family: "Noto Sans Devanagari", serif;
+      }
+      h2 {
+        font-size: clamp(1.75rem, 4vw, 2.5rem);
+        font-weight: 700;
+        margin-bottom: 2rem;
+      }
+      p {
+        font-size: 1.1rem;
+        line-height: 1.7;
+        color: var(--text-light);
+        margin-bottom: 1.5rem;
+      }
+      .devanagari-text {
+        font-family: "Noto Sans Devanagari", serif;
+        font-weight: 600;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem 2.5rem;
+        border: none;
+        border-radius: 0.5rem;
+        font-weight: 700;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        text-align: center;
+      }
+      .btn-primary {
+        background: linear-gradient(
+          135deg,
+          var(--primary-red),
+          var(--dark-red)
+        );
+        color: white;
+        box-shadow: 0 8px 24px rgba(239, 83, 80, 0.3);
+      }
+      .btn-primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 32px rgba(239, 83, 80, 0.5);
+      }
+      .btn-primary:active {
+        transform: translateY(0);
+      }
+      .btn:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        transform: none !important;
+        background: #999;
+        box-shadow: none;
+      }
+      .btn-success {
+        background: linear-gradient(
+          135deg,
+          var(--primary-green),
+          var(--dark-green)
+        );
+        color: white;
+        box-shadow: 0 8px 24px rgba(102, 187, 106, 0.3);
+      }
+      .btn-success:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 32px rgba(102, 187, 106, 0.5);
+      }
+
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        backdrop-filter: blur(10px);
+        z-index: 100;
+      }
+      .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .nav-logo {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        text-decoration: none;
+      }
+      .nav-logo img {
+        height: 45px;
+        width: auto;
+      }
+      .nav-logo-text {
+        font-family: "Inter", sans-serif;
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--text-white);
+      }
+      .hero-title {
+        width: 100%;
+        max-width: 900px;
+        height: auto;
+        margin-bottom: 1.5rem;
+      }
+
+      .hero {
+        padding-top: 120px;
+        padding-bottom: 4rem;
+        background: linear-gradient(
+          135deg,
+          var(--bg-dark) 0%,
+          var(--bg-darker) 100%
+        );
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        right: -10%;
+        width: 600px;
+        height: 600px;
+        background: radial-gradient(
+          circle,
+          rgba(239, 83, 80, 0.1) 0%,
+          transparent 70%
+        );
+        border-radius: 50%;
+      }
+      .hero::after {
+        content: "";
+        position: absolute;
+        bottom: -50%;
+        left: -10%;
+        width: 600px;
+        height: 600px;
+        background: radial-gradient(
+          circle,
+          rgba(102, 187, 106, 0.1) 0%,
+          transparent 70%
+        );
+        border-radius: 50%;
+      }
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 800px;
+        text-align: center;
+        margin: 0 auto;
+      }
+      .hero h1 {
+        color: var(--text-white);
+        margin-bottom: 1rem;
+      }
+      .hero .subtitle {
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: var(--text-light);
+        margin-bottom: 1rem;
+        letter-spacing: 2px;
+      }
+      .hero .subtext {
+        font-family: "Noto Sans Devanagari", serif;
+        font-size: 1.15rem;
+        color: var(--text-light);
+        margin-bottom: 2.5rem;
+        line-height: 1.8;
+      }
+
+      /* ===== VIDEO SECTION (responsive 16:9, sits above event-highlights) ===== */
+      .event-video-wrap {
+        max-width: 720px;
+        margin: 0 auto 2.5rem;
+      }
+      .event-video-frame {
+        position: relative;
+        width: 100%;
+        padding-top: 56.25%; /* 16:9 aspect ratio */
+        border-radius: 1rem;
+        overflow: hidden;
+        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18);
+        border: 1px solid var(--border-dark);
+        background: #000;
+      }
+      .event-video-frame iframe,
+      .event-video-frame video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+        display: block;
+        object-fit: cover;
+      }
+
+      .event-highlights {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1.5rem;
+        margin: 2.5rem 0;
+        padding: 2rem;
+        background: white;
+        border: 1px solid var(--border-dark);
+        border-radius: 0.75rem;
+        backdrop-filter: blur(10px);
+      }
+      .highlight-item {
+        text-align: center;
+      }
+      .highlight-label {
+        font-size: 0.85rem;
+        color: var(--text-light);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 0.5rem;
+      }
+      .highlight-value {
+        font-size: 1.4rem;
+        font-weight: 800;
+        color: var(--primary-red);
+      }
+      .highlight-value.green {
+        color: var(--primary-green);
+      }
+
+      .hero-cta {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 2rem;
+      }
+      .hero-cta .btn {
+        min-width: 250px;
+      }
+
+      .about {
+        padding: 4rem 0;
+        background: linear-gradient(
+          135deg,
+          var(--bg-dark) 0%,
+          var(--bg-darker) 100%
+        );
+        border-top: 1px solid var(--border-dark);
+        border-bottom: 1px solid var(--border-dark);
+      }
+      .about-content {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+      }
+      .about-content h2 {
+        background: linear-gradient(
+          135deg,
+          var(--primary-red),
+          var(--primary-green)
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 2rem;
+      }
+      .about-desc {
+        font-size: 1.15rem;
+        line-height: 1.8;
+        color: var(--text-light);
+        margin-bottom: 3rem;
+      }
+      .about-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+        margin-top: 2rem;
+      }
+
+      /* ===== CARD-LEVEL DROPDOWN (used by About cards & Why-Attend cards) ===== */
+      .about-card,
+      .benefit-card {
+        text-align: left;
+        cursor: pointer;
+      }
+      .about-card {
+        padding: 1rem 1.25rem;
+        min-height: auto;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid var(--border-dark);
+        border-radius: 0.75rem;
+        transition: all 0.3s ease;
+      }
+      .about-card:hover {
+        background: rgba(239, 83, 80, 0.1);
+        border-color: var(--primary-red);
+        transform: translateY(-4px);
+      }
+      .about-card:nth-child(even):hover {
+        background: rgba(102, 187, 106, 0.1);
+        border-color: var(--primary-green);
+      }
+      .card-toggle {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        user-select: none;
+      }
+      .about-card .card-toggle {
+        justify-content: space-between;
+        text-align: left;
+        flex-direction: row;
+        gap: 0.75rem;
+      }
+      .about-card-icon {
+        font-size: 1.8rem;
+        margin-bottom: 0;
+        flex-shrink: 0;
+      }
+      .about-card h3 {
+        font-size: 1.05rem;
+        margin-bottom: 0;
+        font-weight: 700;
+        flex: 1;
+      }
+      .card-chevron {
+        flex-shrink: 0;
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        border: 1.5px solid var(--border-dark);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.85rem;
+        font-weight: 800;
+        color: var(--primary-red);
+        transition: transform 0.3s ease, background 0.3s ease;
+        background: white;
+        margin-top: 0.5rem;
+      }
+      .about-card .card-chevron {
+        margin-top: 0;
+        width: 24px;
+        height: 24px;
+        flex-shrink: 0;
+      }
+      .accordion-card.open .card-chevron {
+        transform: rotate(180deg);
+        background: rgba(239, 83, 80, 0.08);
+      }
+      .card-panel {
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: max-height 0.4s ease, opacity 0.3s ease, margin 0.3s ease;
+      }
+      .accordion-card.open .card-panel {
+        opacity: 1;
+      }
+      .about-card .card-panel p {
+        text-align: left;
+        margin-top: 0.6rem;
+        margin-bottom: 0;
+        font-size: 0.9rem;
+        line-height: 1.5;
+      }
+      .about-card p {
+        font-size: 0.95rem;
+        margin-bottom: 0;
+      }
+
+      .why-attend {
+        padding: 4rem 0;
+        background: linear-gradient(
+          135deg,
+          var(--bg-darker) 0%,
+          var(--bg-dark) 100%
+        );
+      }
+      .section-header {
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+      .section-header h2 {
+        background: linear-gradient(
+          135deg,
+          var(--primary-red),
+          var(--primary-green)
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      .benefit-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+      }
+      .benefit-card {
+        padding: 2rem 2.5rem;
+        background: linear-gradient(
+          135deg,
+          rgba(239, 83, 80, 0.1) 0%,
+          rgba(102, 187, 106, 0.05) 100%
+        );
+        border: 1px solid var(--border-dark);
+        border-radius: 0.75rem;
+        transition: all 0.3s ease;
+      }
+      .benefit-card:hover {
+        border-color: var(--primary-red);
+        transform: translateY(-6px);
+        box-shadow: 0 12px 32px rgba(239, 83, 80, 0.2);
+      }
+      .benefit-card .card-toggle {
+        justify-content: space-between;
+      }
+      .benefit-icon {
+        font-size: 2rem;
+        flex-shrink: 0;
+      }
+      .benefit-card h3 {
+        font-size: 1.15rem;
+        margin-bottom: 0;
+        color: var(--primary-red);
+        font-weight: 700;
+        flex: 1;
+      }
+      .benefit-card .card-chevron {
+        margin-top: 0;
+      }
+      .benefit-card .card-panel p {
+        margin-top: 1rem;
+        margin-bottom: 0;
+        font-size: 1rem;
+      }
+
+      .final-section {
+        padding: 4rem 0;
+        background: linear-gradient(
+          135deg,
+          var(--bg-dark) 0%,
+          var(--bg-darker) 100%
+        );
+        text-align: center;
+        border-top: 1px solid var(--border-dark);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+      }
+      .final-content {
+        max-width: 700px;
+        margin: 0 auto;
+      }
+      .final-content h2 {
+        font-family: "Noto Sans Devanagari", serif;
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+        background: linear-gradient(
+          135deg,
+          var(--primary-red),
+          var(--primary-green)
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      .final-content p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+      }
+      .final-highlights {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+        margin: 2.5rem 0;
+        padding: 2rem;
+        background: white;
+        border: 1px solid var(--border-dark);
+        border-radius: 0.75rem;
+      }
+      .final-highlight {
+        padding: 0.75rem 1.5rem;
+        background: rgba(239, 83, 80, 0.1);
+        border: 1px solid var(--primary-red);
+        border-radius: 0.5rem;
+        font-weight: 600;
+      }
+      .final-highlight.green {
+        background: rgba(102, 187, 106, 0.1);
+        border-color: var(--primary-green);
+      }
+      .cta-button {
+        display: inline-flex;
+      }
+      .cta-button .btn {
+        min-width: 300px;
+        font-size: 1.15rem;
+        padding: 1.2rem 3rem;
+      }
+
+      .sticky-cta {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(
+          135deg,
+          var(--primary-red),
+          var(--dark-red)
+        );
+        padding: 1rem 2rem;
+        text-align: center;
+        z-index: 50;
+        display: flex;
+        justify-content: center;
+        box-shadow: 0 -2px 20px rgba(239, 83, 80, 0.3);
+      }
+      .sticky-cta .btn {
+        background: white;
+        color: var(--primary-red);
+        min-width: 280px;
+      }
+      .sticky-cta .btn:hover {
+        background: var(--text-light);
+      }
+
+      footer {
+        background: var(--bg-darker);
+        border-top: 1px solid var(--border-dark);
+        padding: 2rem;
+        text-align: center;
+        color: var(--text-light);
+        font-size: 0.95rem;
+      }
+
+      /* ===== MODAL ===== */
+      .modal-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.55);
+        z-index: 200;
+        align-items: center;
+        justify-content: center;
+        padding: 1.5rem;
+        overflow-y: auto;
+      }
+      .modal-overlay.show {
+        display: flex;
+      }
+      .modal-box {
+        background: white;
+        border-radius: 1rem;
+        padding: 2rem;
+        max-width: 440px;
+        width: 100%;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        position: relative;
+        margin: auto;
+      }
+      .modal-box h3 {
+        font-size: 1.4rem;
+        font-weight: 800;
+        margin-bottom: 0.35rem;
+        color: var(--dark-red);
+      }
+      .modal-box .modal-sub {
+        font-size: 0.9rem;
+        color: #555;
+        margin-bottom: 1.25rem;
+      }
+      .modal-close {
+        position: absolute;
+        top: 1rem;
+        right: 1.25rem;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        line-height: 1;
+        cursor: pointer;
+        color: #888;
+      }
+
+      /* Steps inside modal */
+      .payment-steps {
+        margin-bottom: 1.5rem;
+      }
+      .step {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.75rem;
+        margin-bottom: 1rem;
+        padding: 0.75rem 1rem;
+        border-radius: 0.5rem;
+        border: 1.5px solid #eee;
+        background: #fafafa;
+        transition: all 0.3s;
+      }
+      .step.active {
+        border-color: var(--primary-red);
+        background: rgba(239, 83, 80, 0.05);
+      }
+      .step.done {
+        border-color: var(--primary-green);
+        background: rgba(102, 187, 106, 0.07);
+      }
+      .step-num {
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background: #ddd;
+        color: #666;
+        font-weight: 800;
+        font-size: 0.85rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        margin-top: 1px;
+      }
+      .step.active .step-num {
+        background: var(--primary-red);
+        color: white;
+      }
+      .step.done .step-num {
+        background: var(--primary-green);
+        color: white;
+      }
+      .step-body {
+        flex: 1;
+      }
+      .step-title {
+        font-weight: 700;
+        font-size: 0.95rem;
+        margin-bottom: 0.2rem;
+        color: #222;
+      }
+      .step-desc {
+        font-size: 0.82rem;
+        color: #666;
+      }
+      .step.done .step-title {
+        color: var(--dark-green);
+      }
+
+      .upi-amount {
+        font-size: 2rem;
+        font-weight: 800;
+        color: var(--dark-red);
+        text-align: center;
+        margin: 0.5rem 0 1.25rem;
+      }
+      .upi-qr {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1rem;
+      }
+      .upi-qr img {
+        width: 200px;
+        height: 200px;
+        border: 1px solid #eee;
+        border-radius: 0.5rem;
+      }
+      .upi-divider {
+        text-align: center;
+        font-size: 0.8rem;
+        color: #999;
+        margin: 0.75rem 0;
+        position: relative;
+      }
+      .upi-divider::before,
+      .upi-divider::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        width: 38%;
+        height: 1px;
+        background: #eee;
+      }
+      .upi-divider::before {
+        left: 0;
+      }
+      .upi-divider::after {
+        right: 0;
+      }
+
+      /* UPI ID copy row */
+      .upi-id-row {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: #f6f6f6;
+        border: 1px solid #e3e3e3;
+        border-radius: 0.5rem;
+        padding: 0.65rem 0.85rem;
+        margin-bottom: 0.5rem;
+      }
+      .upi-id-label {
+        font-size: 0.72rem;
+        color: #888;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+      .upi-id-value {
+        font-weight: 700;
+        font-size: 0.95rem;
+        color: #222;
+        word-break: break-all;
+      }
+      .upi-id-copy {
+        margin-left: auto;
+        background: white;
+        border: 1px solid #ddd;
+        border-radius: 0.4rem;
+        padding: 0.4rem 0.75rem;
+        font-size: 0.8rem;
+        font-weight: 700;
+        color: var(--dark-red);
+        cursor: pointer;
+        flex-shrink: 0;
+      }
+      .upi-id-copy:hover {
+        background: rgba(239, 83, 80, 0.07);
+      }
+      .pay-hint {
+        font-size: 0.82rem;
+        color: #777;
+        text-align: center;
+        margin-bottom: 0.5rem;
+      }
+
+      /* Step 2 section */
+      .confirm-section {
+        margin-top: 1.25rem;
+        padding-top: 1.25rem;
+        border-top: 1px dashed #ddd;
+      }
+      .shot-label {
+        font-size: 0.88rem;
+        font-weight: 700;
+        color: #222;
+        display: block;
+        margin-bottom: 0.4rem;
+      }
+      .shot-box {
+        background: #fafafa;
+        border: 1.5px solid #eee;
+        border-radius: 0.5rem;
+        padding: 0.9rem 1rem;
+        margin-bottom: 0.9rem;
+      }
+      .shot-box ul {
+        list-style: none;
+      }
+      .shot-box li {
+        font-size: 0.84rem;
+        color: #555;
+        padding-left: 1.4rem;
+        position: relative;
+        margin-bottom: 0.45rem;
+        line-height: 1.5;
+      }
+      .shot-box li:last-child {
+        margin-bottom: 0;
+      }
+      .shot-box li::before {
+        content: "📸";
+        position: absolute;
+        left: 0;
+        font-size: 0.85rem;
+      }
+      .shot-box li:nth-child(2)::before {
+        content: "✅";
+      }
+      .shot-box li:nth-child(3)::before {
+        content: "📤";
+      }
+      .shot-check {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.55rem;
+        font-size: 0.88rem;
+        color: #333;
+        font-weight: 600;
+        margin-bottom: 0.9rem;
+        cursor: pointer;
+        padding: 0.75rem 0.9rem;
+        border: 1.5px solid #ddd;
+        border-radius: 0.5rem;
+        transition: all 0.25s;
+      }
+      .shot-check:hover {
+        border-color: #bbb;
+      }
+      .shot-check.checked {
+        border-color: var(--primary-green);
+        background: rgba(102, 187, 106, 0.07);
+      }
+      .shot-check input {
+        margin-top: 0.15rem;
+        width: 18px;
+        height: 18px;
+        flex-shrink: 0;
+        accent-color: var(--primary-green);
+      }
+      #form-submit-btn {
+        width: 100%;
+      }
+      .confirm-note {
+        font-size: 0.78rem;
+        color: #aaa;
+        margin-top: 0.6rem;
+        text-align: center;
+      }
+
+      .lock-icon {
+        margin-right: 0.4rem;
+      }
+
+      /* Payment message */
+      .payment-message {
+        max-width: 500px;
+        margin: 1rem auto 0;
+        padding: 0.85rem 1.25rem;
+        border-radius: 0.5rem;
+        font-weight: 600;
+        font-size: 0.95rem;
+        display: none;
+      }
+      .payment-message.show {
+        display: block;
+      }
+      .payment-message.error {
+        background: rgba(239, 83, 80, 0.12);
+        border: 1px solid var(--primary-red);
+        color: var(--dark-red);
+      }
+      .payment-message.success {
+        background: rgba(102, 187, 106, 0.12);
+        border: 1px solid var(--primary-green);
+        color: var(--dark-green);
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          padding: 0 1rem;
+        }
+        .hero {
+          padding-top: 100px;
+          padding-bottom: 2rem;
+        }
+        .event-video-wrap {
+          margin-bottom: 2rem;
+        }
+        .event-highlights {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 1rem;
+          padding: 1.5rem;
+        }
+        .hero-cta .btn {
+          min-width: 200px;
+          padding: 0.85rem 1.5rem;
+          font-size: 0.95rem;
+        }
+        .about-cards {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .benefit-grid {
+          grid-template-columns: 1fr;
+        }
+        .sticky-cta {
+          padding: 0.75rem 1rem;
+        }
+        .sticky-cta .btn {
+          min-width: 200px;
+          padding: 0.75rem 1.5rem;
+        }
+        .cta-button .btn {
+          min-width: 200px;
+          padding: 1rem 2rem;
+        }
+      }
+      @media (max-width: 480px) {
+        h1 {
+          font-size: 2rem;
+        }
+        h2 {
+          font-size: 1.5rem;
+        }
+        .nav-container {
+          padding: 1rem;
+        }
+        .event-video-frame {
+          border-radius: 0.6rem;
+        }
+        .event-highlights {
+          grid-template-columns: 1fr;
+        }
+        .about-cards {
+          grid-template-columns: 1fr;
+        }
+        .hero-cta {
+          flex-direction: column;
+        }
+        .hero-cta .btn {
+          width: 100%;
+        }
+        .final-highlights {
+          flex-direction: column;
+          gap: 0.5rem;
+        }
+        .final-highlight {
+          width: 100%;
+        }
+        .sticky-cta .btn {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav id="navbar">
+      <div class="nav-container">
+        <a href="#" class="nav-logo">
+          <img
+            src="deja-vu-logo.png"
+            alt="Deja-vu Trading Hub"
+            title="Deja-vu Trading Hub"
+          />
+          <span class="nav-logo-text">Deja-vu Trading Hub</span>
+        </a>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <img
+            src="yashacha-mahakumbh-title.png"
+            alt="यशाचा महाकुंभ"
+            class="hero-title"
+          />
+          <p class="subtitle">
+            ₹5 लाख ते ₹1 कोटी पर्यंतचा यशाचा प्रवास कसा Plan कराल?
+          </p>
+          <p class="subtext devanagari-text">
+            योग्य Strategy + Planning + Discipline सोबत तुमच्या आर्थिक प्रवासाला
+            योग्य दिशा कशी द्यायची, हे जाणून घ्या Yashacha Mahakumbh मध्ये!
+          </p>
+
+          <!-- EVENT PROMO VIDEO — responsive 16:9, placed above event-highlights -->
+          <div class="event-video-wrap">
+            <div class="event-video-frame">
+              <!-- Replace VIDEO_ID with your YouTube video ID (from youtube.com/watch?v=VIDEO_ID) -->
+              <video autoplay muted playsinline loop preload="metadata">
+                <source src="your-video.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </div>
+
+          <div class="event-highlights">
+            <div class="highlight-item">
+              <div class="highlight-label">📅 Date</div>
+              <div class="highlight-value">27 Sept 2026</div>
+            </div>
+            <div class="highlight-item">
+              <div class="highlight-label">📍 Location</div>
+              <div class="highlight-value">Hotel Keys,Lotus Capital,Ashok Stambh,Nashik</div>
+            </div>
+            <div class="highlight-item">
+              <div class="highlight-label">🎟️ Fee</div>
+              <div class="highlight-value red">₹1,499</div>
+            </div>
+            <div class="highlight-item">
+              <div class="highlight-label">🍱 Lunch</div>
+              <div class="highlight-value green">Included</div>
+            </div>
+          </div>
+          <div class="hero-cta">
+            <button class="btn btn-primary" onclick="openPaymentModal(this)">
+              PRE-REGISTER NOW
+            </button>
+          </div>
+          <div class="payment-message" id="hero-payment-message"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about">
+      <div class="container">
+        <div class="about-content">
+          <h2 class="devanagari-text">यशाचा महाकुंभ म्हणजे काय?</h2>
+          <p class="about-desc devanagari-text">
+            नाशिकमध्ये पहिल्यांदाच होणारं<br /><strong
+              >Financial Awareness & Networking Workshop</strong
+            >
+            जिथे Financial Management, Financial Psychology, Wealth Creation आणि Meaningful Networking याबद्दल जाणून घेण्याची संधी मिळेल.
+          </p>
+          <div class="about-cards">
+            <div class="about-card accordion-card" id="about-card-1">
+              <div
+                class="card-toggle"
+                onclick="toggleCard('about-card-1')"
+              >
+                <div class="about-card-icon">🧠</div>
+                <h3 class="devanagari-text">Financial Awareness</h3>
+                <span class="card-chevron">▾</span>
+              </div>
+              <div class="card-panel">
+                <p class="devanagari-text">पैशांचे योग्य नियोजन आणि आर्थिक निर्णय घेण्यासाठी आवश्यक असलेली आर्थिक समज विकसित करा</p>
+              </div>
+            </div>
+            <div class="about-card accordion-card" id="about-card-2">
+              <div
+                class="card-toggle"
+                onclick="toggleCard('about-card-2')"
+              >
+                <div class="about-card-icon">💪</div>
+                <h3 class="devanagari-text">Financial Psychology</h3>
+                <span class="card-chevron">▾</span>
+              </div>
+              <div class="card-panel">
+                <p class="devanagari-text">आपल्या विचारसरणीचा आणि भावनांचा आर्थिक निर्णयांवर कसा परिणाम होतो, हे समजून घ्या</p>
+              </div>
+            </div>
+            <div class="about-card accordion-card" id="about-card-3">
+              <div
+                class="card-toggle"
+                onclick="toggleCard('about-card-3')"
+              >
+                <div class="about-card-icon">🤝</div>
+                <h3 class="devanagari-text">Networking Workshop</h3>
+                <span class="card-chevron">▾</span>
+              </div>
+              <div class="card-panel">
+                <p class="devanagari-text">Millionaire आणि यशस्वी लोकांशी meaningful connections</p>
+              </div>
+            </div>
+            <div class="about-card accordion-card" id="about-card-4">
+              <div
+                class="card-toggle"
+                onclick="toggleCard('about-card-4')"
+              >
+                <div class="about-card-icon">🚀</div>
+                <h3 class="devanagari-text">Financial Management</h3>
+                <span class="card-chevron">▾</span>
+              </div>
+              <div class="card-panel">
+                <p class="devanagari-text">आपल्या पैशांचे योग्य नियोजन, बजेटिंग, खर्च नियंत्रण, बचत आणि गुंतवणुकीचे नियोजन कसे करावे, हे व्यावहारिक पद्धतीने जाणून घ्या.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY ATTEND -->
+    <section class="why-attend">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="devanagari-text">तुम्ही या महाकुंभाचा भाग का व्हावं?</h2>
+        </div>
+        <div class="benefit-grid">
+          <div class="benefit-card accordion-card" id="benefit-card-1">
+            <div class="card-toggle" onclick="toggleCard('benefit-card-1')">
+              <div class="benefit-icon">📚</div>
+              <h3>Learn Something New</h3>
+              <span class="card-chevron">▾</span>
+            </div>
+            <div class="card-panel">
+              <p>नवीन industry insights आणि practical knowledge</p>
+            </div>
+          </div>
+          <div class="benefit-card accordion-card" id="benefit-card-2">
+            <div class="card-toggle" onclick="toggleCard('benefit-card-2')">
+              <div class="benefit-icon">👥</div>
+              <h3>Connect With Like-Minded People</h3>
+              <span class="card-chevron">▾</span>
+            </div>
+            <div class="card-panel">
+              <p>एकाच विचारांचे लोकांशी meaningful connections</p>
+            </div>
+          </div>
+          <div class="benefit-card accordion-card" id="benefit-card-3">
+            <div class="card-toggle" onclick="toggleCard('benefit-card-3')">
+              <div class="benefit-icon">💡</div>
+              <h3>Discover New Perspectives</h3>
+              <span class="card-chevron">▾</span>
+            </div>
+            <div class="card-panel">
+              <p>नवीन दृष्टिकोन आणि breakthrough ideas</p>
+            </div>
+          </div>
+          <div class="benefit-card accordion-card" id="benefit-card-4">
+            <div class="card-toggle" onclick="toggleCard('benefit-card-4')">
+              <div class="benefit-icon">🌐</div>
+              <h3>Build Strong Network</h3>
+              <span class="card-chevron">▾</span>
+            </div>
+            <div class="card-panel">
+              <p>मजबूत relationships तयार करा</p>
+            </div>
+          </div>
+          <div class="benefit-card accordion-card" id="benefit-card-5">
+            <div class="card-toggle" onclick="toggleCard('benefit-card-5')">
+              <div class="benefit-icon">🎯</div>
+              <h3>Explore Opportunities</h3>
+              <span class="card-chevron">▾</span>
+            </div>
+            <div class="card-panel">
+              <p>नवीन collaborations आणि possibilities</p>
+            </div>
+          </div>
+          <div class="benefit-card accordion-card" id="benefit-card-6">
+            <div class="card-toggle" onclick="toggleCard('benefit-card-6')">
+              <div class="benefit-icon">✨</div>
+              <h3>Take Your Next Step</h3>
+              <span class="card-chevron">▾</span>
+            </div>
+            <div class="card-panel">
+              <p>व्यक्तिगत आणि व्यावसायिक विकास</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final-section">
+      <div class="container">
+        <div class="final-content">
+          <h2 class="devanagari-text">तुमचा पुढचा Step आजच सुरू करा</h2>
+          <p class="devanagari-text">
+            यशाचा महाकुंभाचा भाग होण्यासाठी आजच Pre-Register करा
+          </p>
+          <div class="final-highlights">
+            <div class="final-highlight">📅 27 Sept 2026</div>
+            <div class="final-highlight">📍 Nashik</div>
+            <div class="final-highlight">🎟️ ₹1,499</div>
+            <div class="final-highlight green">🍱 Lunch</div>
+          </div>
+          <div class="cta-button">
+            <button class="btn btn-primary" onclick="openPaymentModal(this)">
+              PRE-REGISTER NOW
+            </button>
+          </div>
+          <div class="payment-message" id="final-payment-message"></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="sticky-cta">
+      <button class="btn" onclick="openPaymentModal(this)">PRE-REGISTER</button>
+    </div>
+
+    <footer>
+      <p>
+        <strong>Yashacha Mahakumbh</strong> | Organized by Hitendra Chaudhary 14+ Years of Experience in Financial & Market Insights
+      </p>
+      <p>© 2026 All rights reserved.</p>
+    </footer>
+
+    <!-- ===== PAYMENT MODAL ===== -->
+    <div class="modal-overlay" id="payment-modal">
+      <div class="modal-box">
+        <button class="modal-close" onclick="closePaymentModal()">
+          &times;
+        </button>
+        <h3>Complete Registration</h3>
+        <p class="modal-sub">Follow the 2 steps below to confirm your seat.</p>
+
+        <!-- Step indicators -->
+        <div class="payment-steps">
+          <div class="step active" id="step1-indicator">
+            <div class="step-num">1</div>
+            <div class="step-body">
+              <div class="step-title">Pay ₹1,499 via UPI</div>
+              <div class="step-desc" id="step1-desc">
+                Scan the QR with any UPI app, or pay to the UPI ID below
+              </div>
+            </div>
+          </div>
+          <div class="step" id="step2-indicator">
+            <div class="step-num">2</div>
+            <div class="step-body">
+              <div class="step-title">Upload Payment Screenshot</div>
+              <div class="step-desc" id="step2-desc">
+                Confirm below, then attach it in the form
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Amount & QR -->
+        <div class="upi-amount">₹1,499</div>
+        <div class="upi-qr">
+          <img id="upi-qr-img" src="" alt="UPI QR Code" />
+        </div>
+        <p class="pay-hint">
+          Open PhonePe / Google Pay / Paytm and scan this QR
+        </p>
+
+        <div class="upi-divider">or pay to</div>
+
+        <div class="upi-id-row">
+          <div>
+            <div class="upi-id-label">UPI ID</div>
+            <div class="upi-id-value" id="upi-id-text">9673601815@ybl</div>
+          </div>
+          <button class="upi-id-copy" id="upi-copy-btn" onclick="copyUpiId()">
+            Copy
+          </button>
+        </div>
+
+        <!-- Step 2: Screenshot confirmation gate -->
+        <div class="confirm-section">
+          <label class="shot-label">Payment Screenshot Required</label>
+          <div class="shot-box">
+            <ul>
+              <li>
+                After paying, take a
+                <strong>screenshot of the payment success screen</strong> in
+                your UPI app.
+              </li>
+              <li>
+                Make sure the amount <strong>₹1,499</strong> and the transaction
+                ID are visible.
+              </li>
+              <li>Upload it in the registration form on the next step.</li>
+            </ul>
+          </div>
+
+          <label class="shot-check" id="shot-check-label">
+            <input
+              type="checkbox"
+              id="paid-checkbox"
+              onchange="validateGate()"
+            />
+            <span>I have paid ₹1,499 and saved the payment screenshot.</span>
+          </label>
+
+          <button
+            class="btn btn-primary"
+            id="form-submit-btn"
+            disabled
+            onclick="openRegistrationForm()"
+          >
+            <span class="lock-icon">🔒</span> Fill Registration Form
+          </button>
+          <p class="confirm-note" id="confirm-note">
+            Tick the box above to unlock this button
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      /* =====================================================================
+           CONFIG
+           ===================================================================== */
+      const UPI_ID = "9673601815@ybl";
+      const PAYEE_NAME = "Dipraj More";
+      const EVENT_NOTE = "Yashacha Mahakumbh Registration 27 Sept 2026";
+      const AMOUNT_INR = 1;
+      const GOOGLE_FORM_URL =
+        "https://docs.google.com/forms/d/e/1FAIpQLSfudXwg6tDEoutNYqdZIeOIx2WWL7dv_Ns58Uy2vHCHZm__sg/viewform";
+
+      /* =====================================================================
+           STATE
+           ===================================================================== */
+      let activeTriggerBtn = null;
+
+      /* =====================================================================
+           CARD-LEVEL DROPDOWN — individual About & Why-Attend cards
+           ===================================================================== */
+      function toggleCard(id) {
+        const card = document.getElementById(id);
+        const panel = card.querySelector(".card-panel");
+        const isOpen = card.classList.contains("open");
+
+        if (isOpen) {
+          // Collapse
+          panel.style.maxHeight = panel.scrollHeight + "px";
+          requestAnimationFrame(() => {
+            panel.style.maxHeight = "0px";
+          });
+          card.classList.remove("open");
+        } else {
+          // Expand
+          card.classList.add("open");
+          panel.style.maxHeight = panel.scrollHeight + "px";
+          panel.addEventListener(
+            "transitionend",
+            function handler() {
+              if (card.classList.contains("open")) {
+                panel.style.maxHeight = "none";
+              }
+              panel.removeEventListener("transitionend", handler);
+            },
+            { once: true },
+          );
+        }
+      }
+
+      // Recalculate any open card's height on viewport resize
+      window.addEventListener("resize", () => {
+        document
+          .querySelectorAll(".accordion-card.open .card-panel")
+          .forEach((panel) => {
+            panel.style.maxHeight = "none";
+            panel.style.maxHeight = panel.scrollHeight + "px";
+          });
+      });
+
+      /* =====================================================================
+           UPI HELPERS
+           ===================================================================== */
+      function buildUpiLink() {
+        const params = new URLSearchParams({
+          pa: UPI_ID,
+          pn: PAYEE_NAME,
+          am: String(AMOUNT_INR),
+          cu: "INR",
+          tn: EVENT_NOTE,
+        });
+        return "upi://pay?" + params.toString();
+      }
+
+      /* =====================================================================
+           MODAL OPEN / CLOSE
+           ===================================================================== */
+      function openPaymentModal(triggerButton) {
+        activeTriggerBtn = triggerButton;
+
+        // Set QR (always fresh)
+        const upiLink = buildUpiLink();
+        document.getElementById("upi-qr-img").src =
+          "https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=" +
+          encodeURIComponent(upiLink);
+
+        resetModalState();
+        document.getElementById("payment-modal").classList.add("show");
+      }
+
+      function closePaymentModal() {
+        document.getElementById("payment-modal").classList.remove("show");
+      }
+
+      function resetModalState() {
+        // Reset steps
+        document.getElementById("step1-indicator").className = "step active";
+        document.getElementById("step2-indicator").className = "step";
+        document.getElementById("step2-desc").textContent =
+          "Confirm below, then attach it in the form";
+
+        // Reset UPI ID copy button
+        const copyBtn = document.getElementById("upi-copy-btn");
+        copyBtn.textContent = "Copy";
+
+        // Reset confirmation
+        document.getElementById("paid-checkbox").checked = false;
+        document.getElementById("shot-check-label").className = "shot-check";
+
+        // Lock form button
+        lockFormButton();
+      }
+
+      /* =====================================================================
+           COPY UPI ID
+           ===================================================================== */
+      function copyUpiId() {
+        const btn = document.getElementById("upi-copy-btn");
+        const done = () => {
+          btn.textContent = "✅ Copied";
+          setTimeout(() => {
+            btn.textContent = "Copy";
+          }, 2000);
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(UPI_ID).then(done).catch(fallbackCopy);
+        } else {
+          fallbackCopy();
+        }
+        function fallbackCopy() {
+          const ta = document.createElement("textarea");
+          ta.value = UPI_ID;
+          ta.style.position = "fixed";
+          ta.style.opacity = "0";
+          document.body.appendChild(ta);
+          ta.select();
+          try {
+            document.execCommand("copy");
+            done();
+          } catch (e) {}
+          document.body.removeChild(ta);
+        }
+      }
+
+      /* =====================================================================
+           CONFIRMATION GATE — screenshot checkbox unlocks the form
+           ===================================================================== */
+      function validateGate() {
+        const checked = document.getElementById("paid-checkbox").checked;
+
+        document.getElementById("shot-check-label").className = checked
+          ? "shot-check checked"
+          : "shot-check";
+
+        if (checked) {
+          unlockFormButton();
+          document.getElementById("step1-indicator").className = "step done";
+          document.getElementById("step2-indicator").className = "step active";
+        } else {
+          lockFormButton();
+          document.getElementById("step1-indicator").className = "step active";
+          document.getElementById("step2-indicator").className = "step";
+        }
+      }
+
+      function unlockFormButton() {
+        const formBtn = document.getElementById("form-submit-btn");
+        formBtn.disabled = false;
+        formBtn.className = "btn btn-success";
+        formBtn.innerHTML = "✅ Fill Registration Form";
+        document.getElementById("confirm-note").textContent =
+          "Attach your payment screenshot in the form to confirm your seat.";
+      }
+
+      function lockFormButton() {
+        const formBtn = document.getElementById("form-submit-btn");
+        formBtn.disabled = true;
+        formBtn.className = "btn btn-primary";
+        formBtn.innerHTML =
+          '<span class="lock-icon">🔒</span> Fill Registration Form';
+        document.getElementById("confirm-note").textContent =
+          "Tick the box above to unlock this button";
+      }
+
+      /* =====================================================================
+           OPEN FORM
+           ===================================================================== */
+      function openRegistrationForm() {
+        if (!document.getElementById("paid-checkbox").checked) return;
+
+        if (typeof fbq !== "undefined") fbq("track", "Lead");
+
+        window.open(GOOGLE_FORM_URL, "_blank");
+        closePaymentModal();
+
+        showPageMessage(
+          "success",
+          "🎉 Registration form opened. Please upload your payment screenshot there and submit to confirm your seat.",
+        );
+      }
+
+      /* =====================================================================
+           PAGE-LEVEL SUCCESS / ERROR MESSAGES
+           ===================================================================== */
+      function showPageMessage(type, text) {
+        const allMsgs = document.querySelectorAll(".payment-message");
+        allMsgs.forEach((el) => {
+          el.className = "payment-message";
+          el.textContent = "";
+        });
+
+        let target = null;
+        if (activeTriggerBtn) {
+          target = activeTriggerBtn.closest(".hero-content, .final-content");
+          if (target) target = target.querySelector(".payment-message");
+        }
+        if (!target) target = document.getElementById("hero-payment-message");
+        if (target) {
+          target.textContent = text;
+          target.className = "payment-message show " + type;
+          target.scrollIntoView({ behavior: "smooth", block: "nearest" });
+        }
+      }
+
+      // Keep the displayed UPI ID in sync with the config value
+      document.getElementById("upi-id-text").textContent = UPI_ID;
+
+      console.log("🎯 Yashacha Mahakumbh — Payment flow loaded");
+    </script>
+  </body>
+</html>
