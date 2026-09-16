@@ -92,15 +92,15 @@
       .btn-primary {
         background: linear-gradient(
           135deg,
-          var(--primary-red),
-          var(--dark-red)
+          var(--primary-green),
+          var(--dark-green)
         );
         color: white;
-        box-shadow: 0 8px 24px rgba(239, 83, 80, 0.3);
+        box-shadow: 0 8px 24px rgba(102, 187, 106, 0.3);
       }
       .btn-primary:hover {
         transform: translateY(-3px);
-        box-shadow: 0 12px 32px rgba(239, 83, 80, 0.5);
+        box-shadow: 0 12px 32px rgba(102, 187, 106, 0.5);
       }
       .btn-primary:active {
         transform: translateY(0);
@@ -259,6 +259,31 @@
         display: block;
         object-fit: cover;
       }
+      .event-video-wrap--portrait {
+        max-width: 420px;
+        margin: 3rem auto;
+      }
+      .event-video-wrap--portrait::before {
+        content: "More from the event";
+        display: block;
+        margin-bottom: 0.75rem;
+        color: var(--text-light);
+        font-size: 0.85rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-align: center;
+        text-transform: uppercase;
+      }
+      .event-video-frame--portrait {
+        padding-top: 177.78%;
+        background: transparent;
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+      }
+      .event-video-frame--portrait video {
+        object-fit: contain;
+      }
 
       .event-highlights {
         display: grid;
@@ -398,7 +423,9 @@
         font-size: 0.85rem;
         font-weight: 800;
         color: var(--primary-red);
-        transition: transform 0.3s ease, background 0.3s ease;
+        transition:
+          transform 0.3s ease,
+          background 0.3s ease;
         background: white;
         margin-top: 0.5rem;
       }
@@ -416,7 +443,10 @@
         max-height: 0;
         overflow: hidden;
         opacity: 0;
-        transition: max-height 0.4s ease, opacity 0.3s ease, margin 0.3s ease;
+        transition:
+          max-height 0.4s ease,
+          opacity 0.3s ease,
+          margin 0.3s ease;
       }
       .accordion-card.open .card-panel {
         opacity: 1;
@@ -569,25 +599,25 @@
         bottom: 0;
         left: 0;
         right: 0;
-        background: linear-gradient(
-          135deg,
-          var(--primary-red),
+        /* background: linear-gradient(
+          136deg,
+          var(--dark-red),
           var(--dark-red)
-        );
+        ); */
         padding: 1rem 2rem;
         text-align: center;
         z-index: 50;
         display: flex;
         justify-content: center;
-        box-shadow: 0 -2px 20px rgba(239, 83, 80, 0.3);
+        /* box-shadow: 0 -2px 20px rgba(239, 83, 80, 0.3); */
       }
       .sticky-cta .btn {
-        background: white;
-        color: var(--primary-red);
+        background: var(--dark-green);
+        color: white;
         min-width: 280px;
       }
       .sticky-cta .btn:hover {
-        background: var(--text-light);
+        background: var(--dark-green);
       }
 
       footer {
@@ -644,7 +674,7 @@
         font-size: 1.5rem;
         line-height: 1;
         cursor: pointer;
-        color: #888;
+        color: var(--dark-green);
       }
 
       /* Steps inside modal */
@@ -781,12 +811,12 @@
         padding: 0.4rem 0.75rem;
         font-size: 0.8rem;
         font-weight: 700;
-        color: var(--dark-red);
+        color: var(--dark-green);
         cursor: pointer;
         flex-shrink: 0;
       }
       .upi-id-copy:hover {
-        background: rgba(239, 83, 80, 0.07);
+        background: rgba(102, 187, 106, 0.07);
       }
       .pay-hint {
         font-size: 0.82rem;
@@ -1032,7 +1062,9 @@
             </div>
             <div class="highlight-item">
               <div class="highlight-label">📍 Location</div>
-              <div class="highlight-value">Hotel Keys,Lotus Capital,Ashok Stambh,Nashik</div>
+              <div class="highlight-value">
+                Hotel Keys,Lotus Capital,Ashok Stambh,Nashik
+              </div>
             </div>
             <div class="highlight-item">
               <div class="highlight-label">🎟️ Fee</div>
@@ -1062,65 +1094,75 @@
             नाशिकमध्ये पहिल्यांदाच होणारं<br /><strong
               >Financial Awareness & Networking Workshop</strong
             >
-            जिथे Financial Management, Financial Psychology, Wealth Creation आणि Meaningful Networking याबद्दल जाणून घेण्याची संधी मिळेल.
+            जिथे Financial Management, Financial Psychology, Wealth Creation आणि
+            Meaningful Networking याबद्दल जाणून घेण्याची संधी मिळेल.
           </p>
           <div class="about-cards">
             <div class="about-card accordion-card" id="about-card-1">
-              <div
-                class="card-toggle"
-                onclick="toggleCard('about-card-1')"
-              >
+              <div class="card-toggle" onclick="toggleCard('about-card-1')">
                 <div class="about-card-icon">🧠</div>
                 <h3 class="devanagari-text">Financial Awareness</h3>
                 <span class="card-chevron">▾</span>
               </div>
               <div class="card-panel">
-                <p class="devanagari-text">पैशांचे योग्य नियोजन आणि आर्थिक निर्णय घेण्यासाठी आवश्यक असलेली आर्थिक समज विकसित करा</p>
+                <p class="devanagari-text">
+                  पैशांचे योग्य नियोजन आणि आर्थिक निर्णय घेण्यासाठी आवश्यक
+                  असलेली आर्थिक समज विकसित करा
+                </p>
               </div>
             </div>
             <div class="about-card accordion-card" id="about-card-2">
-              <div
-                class="card-toggle"
-                onclick="toggleCard('about-card-2')"
-              >
+              <div class="card-toggle" onclick="toggleCard('about-card-2')">
                 <div class="about-card-icon">💪</div>
                 <h3 class="devanagari-text">Financial Psychology</h3>
                 <span class="card-chevron">▾</span>
               </div>
               <div class="card-panel">
-                <p class="devanagari-text">आपल्या विचारसरणीचा आणि भावनांचा आर्थिक निर्णयांवर कसा परिणाम होतो, हे समजून घ्या</p>
+                <p class="devanagari-text">
+                  आपल्या विचारसरणीचा आणि भावनांचा आर्थिक निर्णयांवर कसा परिणाम
+                  होतो, हे समजून घ्या
+                </p>
               </div>
             </div>
             <div class="about-card accordion-card" id="about-card-3">
-              <div
-                class="card-toggle"
-                onclick="toggleCard('about-card-3')"
-              >
+              <div class="card-toggle" onclick="toggleCard('about-card-3')">
                 <div class="about-card-icon">🤝</div>
                 <h3 class="devanagari-text">Networking Workshop</h3>
                 <span class="card-chevron">▾</span>
               </div>
               <div class="card-panel">
-                <p class="devanagari-text">Millionaire आणि यशस्वी लोकांशी meaningful connections</p>
+                <p class="devanagari-text">
+                  Millionaire आणि यशस्वी लोकांशी meaningful connections
+                </p>
               </div>
             </div>
             <div class="about-card accordion-card" id="about-card-4">
-              <div
-                class="card-toggle"
-                onclick="toggleCard('about-card-4')"
-              >
+              <div class="card-toggle" onclick="toggleCard('about-card-4')">
                 <div class="about-card-icon">🚀</div>
                 <h3 class="devanagari-text">Financial Management</h3>
                 <span class="card-chevron">▾</span>
               </div>
               <div class="card-panel">
-                <p class="devanagari-text">आपल्या पैशांचे योग्य नियोजन, बजेटिंग, खर्च नियंत्रण, बचत आणि गुंतवणुकीचे नियोजन कसे करावे, हे व्यावहारिक पद्धतीने जाणून घ्या.</p>
+                <p class="devanagari-text">
+                  आपल्या पैशांचे योग्य नियोजन, बजेटिंग, खर्च नियंत्रण, बचत आणि
+                  गुंतवणुकीचे नियोजन कसे करावे, हे व्यावहारिक पद्धतीने जाणून
+                  घ्या.
+                </p>
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
+
+    <div class="event-video-wrap event-video-wrap--portrait">
+      <div class="event-video-frame event-video-frame--portrait">
+        <video autoplay muted playsinline loop preload="metadata">
+          <source src="your-video1.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
 
     <!-- WHY ATTEND -->
     <section class="why-attend">
@@ -1223,7 +1265,8 @@
 
     <footer>
       <p>
-        <strong>Yashacha Mahakumbh</strong> | Organized by Hitendra Chaudhary 14+ Years of Experience in Financial & Market Insights
+        <strong>Yashacha Mahakumbh</strong> | Organized by Hitendra Chaudhary
+        14+ Years of Experience in Financial & Market Insights
       </p>
       <p>© 2026 All rights reserved.</p>
     </footer>
