@@ -10,7 +10,7 @@
     <title>Yashacha Mahakumbh - Knowledge, Networking & Growth</title>
 
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+Devanagari:wght@600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Eczar:wght@400;500;600;700;800&family=Noto+Serif+Devanagari:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
 
@@ -25,6 +25,8 @@
         --text-white: #000000;
         --text-light: #000000;
         --border-dark: #333333;
+        --font-english: "Eczar", serif;
+        --font-devanagari: "Noto Serif Devanagari", serif;
       }
 
       * {
@@ -36,12 +38,7 @@
         scroll-behavior: smooth;
       }
       body {
-        font-family:
-          "Inter",
-          -apple-system,
-          BlinkMacSystemFont,
-          "Segoe UI",
-          sans-serif;
+        font-family: var(--font-english);
         background-color: var(--bg-dark);
         color: var(--text-white);
         line-height: 1.6;
@@ -57,7 +54,7 @@
         font-weight: 800;
         line-height: 1.1;
         margin-bottom: 1.5rem;
-        font-family: "Noto Sans Devanagari", serif;
+        font-family: var(--font-english);
       }
       h2 {
         font-size: clamp(1.75rem, 4vw, 2.5rem);
@@ -71,7 +68,7 @@
         margin-bottom: 1.5rem;
       }
       .devanagari-text {
-        font-family: "Noto Sans Devanagari", serif;
+        font-family: var(--font-devanagari);
         font-weight: 600;
       }
 
@@ -153,7 +150,7 @@
         width: auto;
       }
       .nav-logo-text {
-        font-family: "Inter", sans-serif;
+        font-family: var(--font-english);
         font-size: 1rem;
         font-weight: 700;
         color: var(--text-white);
@@ -223,10 +220,11 @@
         font-weight: 600;
         color: var(--text-light);
         margin-bottom: 1rem;
-        letter-spacing: 2px;
+        letter-spacing: -0.5px;
+        
       }
       .hero .subtext {
-        font-family: "Noto Sans Devanagari", serif;
+        font-family: var(--font-devanagari);
         font-size: 1.15rem;
         color: var(--text-light);
         margin-bottom: 2.5rem;
@@ -302,6 +300,7 @@
       .highlight-label {
         font-size: 0.85rem;
         color: var(--text-light);
+        font-weight: 800;
         text-transform: uppercase;
         letter-spacing: 1px;
         margin-bottom: 0.5rem;
@@ -547,7 +546,7 @@
         margin: 0 auto;
       }
       .final-content h2 {
-        font-family: "Noto Sans Devanagari", serif;
+        font-family: var(--font-devanagari);
         font-size: 2.5rem;
         margin-bottom: 1.5rem;
         background: linear-gradient(
@@ -1037,7 +1036,7 @@
             alt="यशाचा महाकुंभ"
             class="hero-title"
           />
-          <p class="subtitle">
+          <p class="subtitle devanagari-text">
             ₹5 लाख ते ₹1 कोटी पर्यंतचा यशाचा प्रवास कसा Plan कराल?
           </p>
           <p class="subtext devanagari-text">
@@ -1101,7 +1100,7 @@
             <div class="about-card accordion-card" id="about-card-1">
               <div class="card-toggle" onclick="toggleCard('about-card-1')">
                 <div class="about-card-icon">🧠</div>
-                <h3 class="devanagari-text">Financial Awareness</h3>
+                <h3>Financial Awareness</h3>
                 <span class="card-chevron">▾</span>
               </div>
               <div class="card-panel">
@@ -1114,7 +1113,7 @@
             <div class="about-card accordion-card" id="about-card-2">
               <div class="card-toggle" onclick="toggleCard('about-card-2')">
                 <div class="about-card-icon">💪</div>
-                <h3 class="devanagari-text">Financial Psychology</h3>
+                <h3>Financial Psychology</h3>
                 <span class="card-chevron">▾</span>
               </div>
               <div class="card-panel">
@@ -1127,7 +1126,7 @@
             <div class="about-card accordion-card" id="about-card-3">
               <div class="card-toggle" onclick="toggleCard('about-card-3')">
                 <div class="about-card-icon">🤝</div>
-                <h3 class="devanagari-text">Networking Workshop</h3>
+                <h3>Networking Workshop</h3>
                 <span class="card-chevron">▾</span>
               </div>
               <div class="card-panel">
@@ -1139,7 +1138,7 @@
             <div class="about-card accordion-card" id="about-card-4">
               <div class="card-toggle" onclick="toggleCard('about-card-4')">
                 <div class="about-card-icon">🚀</div>
-                <h3 class="devanagari-text">Financial Management</h3>
+                <h3>Financial Management</h3>
                 <span class="card-chevron">▾</span>
               </div>
               <div class="card-panel">
