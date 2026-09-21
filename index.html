@@ -1854,7 +1854,6 @@
           }
 
           submitBtn.disabled = true;
-          submitBtn.textContent = "Sending...";
           statusEl.className = "lead-status";
 
           const body = new URLSearchParams({
@@ -1863,28 +1862,36 @@
             source: window.location.href,
           });
 
-          // no-cors: the browser can't read Google's reply, but the data is delivered
-          fetch(LEAD_SCRIPT_URL, { method: "POST", mode: "no-cors", body: body })
-            .then(function () {
-              setItem("localStorage", "leadSubmitted", "1");
-              if (typeof fbq !== "undefined") fbq("trackCustom", "PopupLead");
-              showStatus(
-                "success",
-                "🎉 धन्यवाद! आम्ही लवकरच तुमच्याशी संपर्क करू.",
-              );
-              form.reset();
-              setTimeout(function () {
-                closeLead(false);
-              }, 1800);
-            })
-            .catch(function () {
-              showStatus(
-                "error",
-                "Something went wrong. Check your internet and try again.",
-              );
-              submitBtn.disabled = false;
-              submitBtn.textContent = "Send My Details";
+          // Send in the background. keepalive lets it finish even if the
+          // visitor closes the tab. Retries once if the network fails.
+          function send(retry) {
+            fetch(LEAD_SCRIPT_URL, {
+              method: "POST",
+              mode: "no-cors",
+              body: body,
+              keepalive: true,
+            }).catch(function () {
+              if (retry) {
+                setTimeout(function () {
+                  send(false);
+                }, 3000);
+              }
             });
+          }
+          send(true);
+
+          // Show success right away instead of waiting for Google's slow reply
+          setItem("localStorage", "leadSubmitted", "1");
+          if (typeof fbq !== "undefined") fbq("trackCustom", "PopupLead");
+          submitBtn.textContent = "Sent ✓";
+          showStatus(
+            "success",
+            "🎉 धन्यवाद! आम्ही लवकरच तुमच्याशी संपर्क करू.",
+          );
+          form.reset();
+          setTimeout(function () {
+            closeLead(false);
+          }, 1200);
         });
       })();
     </script>
