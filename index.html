@@ -962,6 +962,74 @@
         color: var(--dark-green);
       }
 
+      /* ===== LEAD POPUP (Name + Mobile) ===== */
+      .lead-field {
+        margin-bottom: 1rem;
+      }
+      .lead-field label {
+        display: block;
+        font-size: 0.88rem;
+        font-weight: 700;
+        color: #222;
+        margin-bottom: 0.35rem;
+      }
+      .lead-field input {
+        width: 100%;
+        padding: 0.8rem 0.9rem;
+        font-size: 1rem;
+        font-family: inherit;
+        color: #222;
+        border: 1.5px solid #ddd;
+        border-radius: 0.5rem;
+        background: #fafafa;
+        transition:
+          border-color 0.2s,
+          background 0.2s;
+      }
+      .lead-field input:focus {
+        outline: none;
+        border-color: var(--primary-green);
+        background: #fff;
+      }
+      .lead-field.invalid input {
+        border-color: var(--primary-red);
+      }
+      .lead-error {
+        display: none;
+        font-size: 0.8rem;
+        color: var(--dark-red);
+        margin-top: 0.3rem;
+      }
+      .lead-field.invalid .lead-error {
+        display: block;
+      }
+      #lead-submit-btn {
+        width: 100%;
+        margin-top: 0.25rem;
+      }
+      .lead-status {
+        display: none;
+        margin-top: 0.9rem;
+        padding: 0.7rem 1rem;
+        border-radius: 0.5rem;
+        font-size: 0.9rem;
+        font-weight: 600;
+        text-align: center;
+      }
+      .lead-status.show {
+        display: block;
+      }
+      .lead-status.success {
+        background: rgba(102, 187, 106, 0.12);
+        border: 1px solid var(--primary-green);
+        color: var(--dark-green);
+      }
+      .lead-status.error {
+        background: rgba(239, 83, 80, 0.12);
+        border: 1px solid var(--primary-red);
+        color: var(--dark-red);
+      }
+
       @media (max-width: 768px) {
         .container {
           padding: 0 1rem;
@@ -1397,6 +1465,65 @@
       </div>
     </div>
 
+    <!-- ===== LEAD POPUP (Name + Mobile) ===== -->
+    <div
+      class="modal-overlay"
+      id="lead-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="lead-title"
+    >
+      <div class="modal-box">
+        <button
+          class="modal-close"
+          type="button"
+          id="lead-close"
+          aria-label="Close"
+        >
+          &times;
+        </button>
+        <h3 id="lead-title" class="devanagari-text">
+          यशाचा महाकुंभ – तुमची जागा राखून ठेवा
+        </h3>
+        <p class="modal-sub devanagari-text">
+          तुमचे नाव आणि मोबाईल नंबर द्या, आम्ही तुम्हाला event ची माहिती पाठवू.
+        </p>
+
+        <form id="lead-form" novalidate>
+          <div class="lead-field" id="lead-name-field">
+            <label for="lead-name">Full Name</label>
+            <input
+              type="text"
+              id="lead-name"
+              name="name"
+              autocomplete="name"
+              placeholder="Your full name"
+            />
+            <div class="lead-error">Please enter your name.</div>
+          </div>
+
+          <div class="lead-field" id="lead-mobile-field">
+            <label for="lead-mobile">Mobile Number</label>
+            <input
+              type="tel"
+              id="lead-mobile"
+              name="mobile"
+              inputmode="numeric"
+              autocomplete="tel-national"
+              maxlength="10"
+              placeholder="10-digit mobile number"
+            />
+            <div class="lead-error">Enter a valid 10-digit mobile number.</div>
+          </div>
+
+          <button type="submit" class="btn btn-primary" id="lead-submit-btn">
+            Send My Details
+          </button>
+          <div class="lead-status" id="lead-status"></div>
+        </form>
+      </div>
+    </div>
+
     <script>
       /* =====================================================================
            CONFIG
@@ -1623,6 +1750,143 @@
       document.getElementById("upi-id-text").textContent = UPI_ID;
 
       console.log("🎯 Yashacha Mahakumbh — Payment flow loaded");
+    </script>
+
+    <!-- =====================================================================
+         LEAD POPUP SCRIPT — saves Name + Mobile to Google Sheet
+         ===================================================================== -->
+    <script>
+      (function () {
+        /* ---------- CONFIG ---------- */
+        // Paste your Google Apps Script Web App URL here (ends with /exec)
+        const LEAD_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxgcM31rpa9nvC2Lq2-xQwe0vwEs6dTFN3gYXcrAk4C1u1wiA-2YNITI8xjx8Tps2qn/exec";
+        const SHOW_DELAY_MS = 1500; // wait before the popup appears
+
+        /* ---------- ELEMENTS ---------- */
+        const modal = document.getElementById("lead-modal");
+        const form = document.getElementById("lead-form");
+        const nameInput = document.getElementById("lead-name");
+        const mobileInput = document.getElementById("lead-mobile");
+        const nameField = document.getElementById("lead-name-field");
+        const mobileField = document.getElementById("lead-mobile-field");
+        const submitBtn = document.getElementById("lead-submit-btn");
+        const statusEl = document.getElementById("lead-status");
+
+        /* ---------- SAFE STORAGE (never breaks the page) ---------- */
+        function getItem(kind, key) {
+          try {
+            return window[kind].getItem(key);
+          } catch (e) {
+            return null;
+          }
+        }
+        function setItem(kind, key, val) {
+          try {
+            window[kind].setItem(key, val);
+          } catch (e) {}
+        }
+
+        /* ---------- OPEN / CLOSE ---------- */
+        function openLead() {
+          modal.classList.add("show");
+          document.body.style.overflow = "hidden";
+          setTimeout(function () {
+            nameInput.focus();
+          }, 50);
+        }
+        function closeLead(remember) {
+          modal.classList.remove("show");
+          document.body.style.overflow = "";
+          if (remember) setItem("sessionStorage", "leadDismissed", "1");
+        }
+
+        document
+          .getElementById("lead-close")
+          .addEventListener("click", function () {
+            closeLead(true);
+          });
+        modal.addEventListener("click", function (e) {
+          if (e.target === modal) closeLead(true);
+        });
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape" && modal.classList.contains("show"))
+            closeLead(true);
+        });
+
+        // Show on visit, unless they already submitted or closed it this session
+        if (
+          !getItem("localStorage", "leadSubmitted") &&
+          !getItem("sessionStorage", "leadDismissed")
+        ) {
+          setTimeout(openLead, SHOW_DELAY_MS);
+        }
+
+        /* ---------- INPUT CLEANUP ---------- */
+        mobileInput.addEventListener("input", function () {
+          mobileInput.value = mobileInput.value.replace(/\D/g, "").slice(0, 10);
+        });
+
+        /* ---------- STATUS MESSAGE ---------- */
+        function showStatus(type, text) {
+          statusEl.className = "lead-status show " + type;
+          statusEl.textContent = text;
+        }
+
+        /* ---------- SUBMIT ---------- */
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const name = nameInput.value.trim();
+          const mobile = mobileInput.value.trim();
+          const nameOk = name.length >= 2;
+          const mobileOk = /^[6-9]\d{9}$/.test(mobile); // Indian mobile numbers
+
+          nameField.classList.toggle("invalid", !nameOk);
+          mobileField.classList.toggle("invalid", !mobileOk);
+          if (!nameOk || !mobileOk) return;
+
+          if (LEAD_SCRIPT_URL.indexOf("PASTE_YOUR") === 0) {
+            showStatus(
+              "error",
+              "Setup incomplete: add your Apps Script URL in the code.",
+            );
+            return;
+          }
+
+          submitBtn.disabled = true;
+          submitBtn.textContent = "Sending...";
+          statusEl.className = "lead-status";
+
+          const body = new URLSearchParams({
+            name: name,
+            mobile: mobile,
+            source: window.location.href,
+          });
+
+          // no-cors: the browser can't read Google's reply, but the data is delivered
+          fetch(LEAD_SCRIPT_URL, { method: "POST", mode: "no-cors", body: body })
+            .then(function () {
+              setItem("localStorage", "leadSubmitted", "1");
+              if (typeof fbq !== "undefined") fbq("trackCustom", "PopupLead");
+              showStatus(
+                "success",
+                "🎉 धन्यवाद! आम्ही लवकरच तुमच्याशी संपर्क करू.",
+              );
+              form.reset();
+              setTimeout(function () {
+                closeLead(false);
+              }, 1800);
+            })
+            .catch(function () {
+              showStatus(
+                "error",
+                "Something went wrong. Check your internet and try again.",
+              );
+              submitBtn.disabled = false;
+              submitBtn.textContent = "Send My Details";
+            });
+        });
+      })();
     </script>
   </body>
 </html>
