@@ -1474,14 +1474,6 @@
       aria-labelledby="lead-title"
     >
       <div class="modal-box">
-        <button
-          class="modal-close"
-          type="button"
-          id="lead-close"
-          aria-label="Close"
-        >
-          &times;
-        </button>
         <h3 id="lead-title" class="devanagari-text">
           यशाचा महाकुंभ – तुमची जागा राखून ठेवा
         </h3>
@@ -1799,19 +1791,6 @@
           document.body.style.overflow = "";
           if (remember) setItem("sessionStorage", "leadDismissed", "1");
         }
-
-        document
-          .getElementById("lead-close")
-          .addEventListener("click", function () {
-            closeLead(true);
-          });
-        modal.addEventListener("click", function (e) {
-          if (e.target === modal) closeLead(true);
-        });
-        document.addEventListener("keydown", function (e) {
-          if (e.key === "Escape" && modal.classList.contains("show"))
-            closeLead(true);
-        });
 
         // Show on visit, unless they already submitted or closed it this session
         if (
